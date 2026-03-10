@@ -1,81 +1,132 @@
-/* 
-GENERAL PAGE STYLE
-*/
+/* GENERAL PAGE STYLE */
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
-    background-color: aqua; /* page background */
 }
 
-/* 
-HEADER
-*/
+/* PAGE WRAPPER */
+.wrapper {
+    width: 900px;
+    margin: 0 auto;
+    background-color: aqua;
+}
+
+/* HEADER */
 .site-header {
     position: relative;
-    text-align: center;
 }
 
 .site-header img {
     width: 100%;
-    height: 300px;
+    height: 250px;
     object-fit: cover;
+    display: block;
 }
 
+/* TITLE ON TOP OF HEADER IMAGE */
 .site-header h1 {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white; /* required for visibility on image */
+    color: white;
+    font-size: 40px;
 }
 
-/* 
-MAIN CONTENT
-*/
+/* NAVIGATION */
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    flex: 1;
+    text-align: center;
+    padding: 12px 0;
+    border-right: 1px solid black;
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+/* MAIN CONTENT */
 main {
-    width: 900px;
-    margin: auto;
-    background-color: white; /* main content background */
     padding: 20px;
 }
 
-/* 
-ARTICLE
-*/
+/* ARTICLE IMAGE WITH TEXT WRAP */
 article img {
-    float: left; /* image floats for text wrapping */
-    width: 200px;
+    float: left;
+    width: 180px;
     margin-right: 15px;
     margin-bottom: 10px;
 }
 
-/* 
-FACTS
-*/
-.facts {
-    background-color: yellow; /* highlights facts section */
-    padding: 15px;
+/* CLEAR FLOAT AFTER ARTICLE */
+article::after {
+    content: "";
+    display: block;
+    clear: both;
 }
 
-/* 
-FORM
-*/
-label {
-    display: block;
+/* FACTS SECTION */
+.facts {
+    background-color: yellow;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* FORM */
+form {
+    border: 1px solid gray;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+/* LABELS */
+form label {
     margin-top: 10px;
 }
 
-input,
+/* TEXT INPUTS */
+input[type="text"],
+input[type="email"],
 textarea {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
+    box-sizing: border-box;
 }
 
+/* TEXTAREA HEIGHT */
+textarea {
+    height: 120px;
+}
+
+/* RADIO BUTTONS HORIZONTAL */
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+input[type="radio"]+label {
+    display: inline;
+    margin-right: 15px;
+}
+
+/* SUBMIT BUTTON */
 input[type="submit"] {
-    background-color: green; /* button color */
-    color: white; /* button text */
+    background-color: green;
+    color: white;
     border: none;
-    margin-top: 15px;
-    cursor: pointer;
+    padding: 6px 14px;
+    margin-top: 10px;
+}
+
+/* FOOTER */
+footer {
+    text-align: right;
+    padding: 10px 20px;
 }
